@@ -8,9 +8,9 @@ No configuration, no dependencies, no accounts.
 
 ## The skills
 
-| Skill                                                  | What it does                                                                                                                                                     |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`conventional-commits`](skills/conventional-commits/) | Turns a diff or a description of your work into a spec-compliant Conventional Commit message. Flags non-atomic diffs instead of writing "feat: add X and fix Y". |
+| Skill                                                  | What it does                                                                                                                                                     | Best used in    |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| [`conventional-commits`](skills/conventional-commits/) | Turns a diff or a description of your work into a spec-compliant Conventional Commit message. Flags non-atomic diffs instead of writing "feat: add X and fix Y". | Claude Code CLI |
 
 More coming. Suggestions and pull requests welcome.
 
