@@ -1,3 +1,5 @@
+<img src="assets/logo.png" alt="Helpful Claude Skills logo" width="80" />
+
 # Helpful Claude Skills
 
 A free, open collection of Agent Skills for Claude Code and Claude Desktop.
