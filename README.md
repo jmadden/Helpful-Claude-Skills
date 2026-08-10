@@ -1,4 +1,4 @@
-# Helpful Claude Skills
+# Helpful Claude Skills 🛠️
 
 A free, open collection of Agent Skills for Claude Code and Claude Desktop.
 
