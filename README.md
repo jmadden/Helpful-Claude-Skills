@@ -1,5 +1,3 @@
-<img src="assets/logo.png" alt="Helpful Claude Skills logo" width="80" />
-
 # Helpful Claude Skills
 
 A free, open collection of Agent Skills for Claude Code and Claude Desktop.
@@ -10,8 +8,8 @@ No configuration, no dependencies, no accounts.
 
 ## The skills
 
-| Skill | What it does |
-|---|---|
+| Skill                                                  | What it does                                                                                                                                                     |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`conventional-commits`](skills/conventional-commits/) | Turns a diff or a description of your work into a spec-compliant Conventional Commit message. Flags non-atomic diffs instead of writing "feat: add X and fix Y". |
 
 More coming. Suggestions and pull requests welcome.
