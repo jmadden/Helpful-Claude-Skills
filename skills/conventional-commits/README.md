@@ -31,7 +31,7 @@ types, user-facing behavior wins: `feat` > `fix` > `perf` > `refactor` >
 source of wrong types.
 
 **Uses the imperative test.** The description must complete the sentence
-"If applied, this commit will ___". More reliable than telling an agent to
+"If applied, this commit will \_\_\_". More reliable than telling an agent to
 "use present tense", which it routinely misreads.
 
 **Never invents facts.** No fabricated issue numbers, ticket IDs, or
@@ -152,6 +152,42 @@ required it:
 ```
 
 Without a rule like that, the atomicity check will try to split the two.
+
+## Works well with
+
+None of these are required. The skill is a single file with no dependencies.
+But Conventional Commits pay off most when something downstream consumes them,
+and the skill is built to cooperate with the tools below rather than fight
+them.
+
+**[commitlint](https://commitlint.js.org/)** enforces the format in CI or on a
+git hook, so a malformed message gets rejected before it lands. This is the
+one worth adding first. The skill reads your commitlint config if it finds
+one and treats those rules as authoritative, which means the two will not
+disagree. Configure your allowed types with `type-enum`, your allowed scopes
+with `scope-enum`, and your header length with `header-max-length`.
+
+**[husky](https://typicode.github.io/husky/)** or
+**[lefthook](https://lefthook.dev/)** run commitlint on the `commit-msg` hook
+so the check happens locally instead of in CI. Faster feedback, no failed
+pipeline. Pick either; lefthook is a single binary and language-agnostic,
+husky is the npm-ecosystem default.
+
+**[semantic-release](https://semantic-release.gitbook.io/)** or
+**[changesets](https://github.com/changesets/changesets)** turn the commit
+history into version bumps and release notes automatically. This is the
+actual point of Conventional Commits. Without something in this slot, the
+format is discipline for its own sake. semantic-release is fully automated
+and opinionated; changesets is more manual and better suited to monorepos
+with independently versioned packages.
+
+**[git-cliff](https://git-cliff.org/)** generates a changelog from the commit
+history without taking over your release process. Good middle ground if
+full automation is more than you want.
+
+A reasonable starting point, in order: add commitlint, wire it to a hook,
+then decide later whether you want automated releases. The skill is useful
+on its own before any of this.
 
 ## House rules that are not in the spec
 
