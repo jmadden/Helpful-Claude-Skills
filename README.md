@@ -8,11 +8,35 @@ No configuration, no dependencies, no accounts.
 
 ## The skills
 
-| Skill                                                  | What it does                                                                                                                                                     | Best used in    |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [`conventional-commits`](skills/conventional-commits/) | Turns a diff or a description of your work into a spec-compliant Conventional Commit message. Flags non-atomic diffs instead of writing "feat: add X and fix Y". | Claude Code CLI |
+| Skill | What it does | Scope | Runs in |
+|---|---|---|---|
+| [`conventional-commits`](skills/conventional-commits/) | Turns a diff or a description of your work into a spec-compliant Conventional Commit message. Flags non-atomic diffs instead of writing "feat: add X and fix Y". | Per project | Claude Code |
 
 More coming. Suggestions and pull requests welcome.
+
+**Scope** is where to install the skill.
+
+- **Per project** means put it in the repo's `.claude/skills/`. Use this when
+  the skill only makes sense inside a codebase, or when its behavior should
+  be tuned per repo.
+- **Global** means put it in `~/.claude/skills/` and get it everywhere. Use
+  this only for skills you want loaded in every session regardless of what
+  you are working on.
+
+**Runs in** is which app the skill actually works in.
+
+- **Claude Code** is the terminal agent. Reads both scopes.
+- **Claude Desktop** reads the same `~/.claude/skills/` path as Claude Code,
+  so global skills work in both.
+- **Cowork / cloud** sessions do not read `~/.claude/skills/` from your
+  machine. Cloud sessions do load project skills committed to the cloned
+  repo. If you need a skill in Cowork, enable it on your claude.ai account
+  instead.
+
+If a skill lists fewer apps than you expected, that is usually because it
+needs something only those apps have. `conventional-commits` needs a git
+repo and a real diff, so it is a Claude Code skill in practice even though
+nothing stops you copying it elsewhere.
 
 ## Install a skill
 
